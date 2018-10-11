@@ -1,0 +1,13 @@
+
+
+body {
+    background-color: #ffffff;
+    background-image: url(https://image.dcm-info.com/HOBBY/article/thumb/895_2015_Chelsea_6010.jpg);
+    background-repeat: repeat;
+}
+
+div {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
