@@ -1,0 +1,191 @@
+@prefix : <http://www.semanticweb.org/lieke/flora#> .
+@prefix fr: <http://www.semanticweb.org/lieke/flora/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/lieke/flora> .
+
+<http://www.semanticweb.org/lieke/flora> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/lieke/flora/canWithstand
+fr:canWithstand rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/lieke/flora/growsIn
+fr:growsIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/lieke/flora/hasUsage
+fr:hasUsage rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/lieke/flora/isFoodFor
+fr:isFoodFor rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/lieke/flora/AquaticPlant
+fr:AquaticPlant rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty fr:growsIn ;
+                                      owl:someValuesFrom fr:Water
+                                    ] ;
+                rdfs:subClassOf fr:Plant .
+
+
+###  http://www.semanticweb.org/lieke/flora/HousePlant
+fr:HousePlant rdf:type owl:Class ;
+              rdfs:subClassOf fr:LandPlant .
+
+
+###  http://www.semanticweb.org/lieke/flora/LandPlant
+fr:LandPlant rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty fr:growsIn ;
+                                   owl:someValuesFrom fr:Soil
+                                 ] ;
+             rdfs:subClassOf fr:Plant .
+
+
+###  http://www.semanticweb.org/lieke/flora/LivingEnvironment
+fr:LivingEnvironment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lieke/flora/OutdoorPlant
+fr:OutdoorPlant rdf:type owl:Class ;
+                rdfs:subClassOf fr:LandPlant .
+
+
+###  http://www.semanticweb.org/lieke/flora/Plant
+fr:Plant rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:unionOf ( [ rdf:type owl:Restriction ;
+                                               owl:onProperty fr:growsIn ;
+                                               owl:someValuesFrom fr:Soil
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty fr:growsIn ;
+                                               owl:someValuesFrom fr:Water
+                                             ]
+                                           )
+                             ] .
+
+
+###  http://www.semanticweb.org/lieke/flora/Soil
+fr:Soil rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:oneOf ( fr:soil
+                                        )
+                            ] ;
+        rdfs:subClassOf fr:LivingEnvironment .
+
+
+###  http://www.semanticweb.org/lieke/flora/Usage
+fr:Usage rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/lieke/flora/Water
+fr:Water rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:oneOf ( fr:freshWater
+                                           fr:saltWater
+                                         )
+                             ] ;
+         rdfs:subClassOf fr:LivingEnvironment .
+
+
+###  http://www.semanticweb.org/lieke/flora/WeatherType
+fr:WeatherType rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/lieke/flora/Aloe
+fr:Aloe rdf:type owl:NamedIndividual ,
+                 fr:HousePlant ;
+        fr:hasUsage fr:Healing .
+
+
+###  http://www.semanticweb.org/lieke/flora/Buxus
+fr:Buxus rdf:type owl:NamedIndividual ,
+                  fr:OutdoorPlant ;
+         fr:hasUsage fr:Decoration .
+
+
+###  http://www.semanticweb.org/lieke/flora/ColdTemperature
+fr:ColdTemperature rdf:type owl:NamedIndividual ,
+                            fr:WeatherType .
+
+
+###  http://www.semanticweb.org/lieke/flora/Decoration
+fr:Decoration rdf:type owl:NamedIndividual ,
+                       fr:Usage .
+
+
+###  http://www.semanticweb.org/lieke/flora/Food
+fr:Food rdf:type owl:NamedIndividual ,
+                 fr:Usage .
+
+
+###  http://www.semanticweb.org/lieke/flora/Healing
+fr:Healing rdf:type owl:NamedIndividual ,
+                    fr:Usage .
+
+
+###  http://www.semanticweb.org/lieke/flora/Lettuce
+fr:Lettuce rdf:type owl:NamedIndividual ,
+                    fr:LandPlant ;
+           fr:hasUsage fr:Food .
+
+
+###  http://www.semanticweb.org/lieke/flora/Oak
+fr:Oak rdf:type owl:NamedIndividual ,
+                fr:Plant ;
+       fr:growsIn fr:soil .
+
+
+###  http://www.semanticweb.org/lieke/flora/Plantain
+fr:Plantain rdf:type owl:NamedIndividual ;
+            fr:growsIn fr:soil ;
+            fr:hasUsage fr:Healing .
+
+
+###  http://www.semanticweb.org/lieke/flora/Seagrass
+fr:Seagrass rdf:type owl:NamedIndividual ;
+            fr:growsIn fr:saltWater .
+
+
+###  http://www.semanticweb.org/lieke/flora/Storm
+fr:Storm rdf:type owl:NamedIndividual ,
+                  fr:WeatherType .
+
+
+###  http://www.semanticweb.org/lieke/flora/WaterLily
+fr:WaterLily rdf:type owl:NamedIndividual ;
+             fr:growsIn fr:freshWater .
+
+
+###  http://www.semanticweb.org/lieke/flora/freshWater
+fr:freshWater rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lieke/flora/saltWater
+fr:saltWater rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lieke/flora/soil
+fr:soil rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi

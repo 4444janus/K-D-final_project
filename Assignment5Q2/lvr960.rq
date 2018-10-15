@@ -1,0 +1,10 @@
+# endpoint: http://dbpedia.org/sparql
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX fr: <http://www.semanticweb.org/lieke/flora/>
+
+CONSTRUCT {
+	?p a fr:Plant . 
+} WHERE
+  { ?p a dbo:Plant . }
+LIMIT 100
