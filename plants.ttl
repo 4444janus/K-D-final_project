@@ -25,6 +25,10 @@ pl:has_leaf_colour rdf:type owl:ObjectProperty .
 pl:has_light_requirements rdf:type owl:ObjectProperty .
 
 
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_price_range
+pl:has_price_range rdf:type owl:ObjectProperty .
+
+
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_water_requirements
 pl:has_water_requirements rdf:type owl:ObjectProperty .
 
