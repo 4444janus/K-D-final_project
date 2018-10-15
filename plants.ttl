@@ -16,9 +16,15 @@
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_dutch_name
+
+pl:has_dutch_name a owl:ObjectProperty ;
+	owl:inverseOf pl:is_dutch_name_from .
+# 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_latin_name
 
-pl:has_latin_name a owl:ObjectProperty .
+pl:has_latin_name a owl:ObjectProperty ;
+	owl:inverseOf pl:is_latin_name_from .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_leaf_colour
 
@@ -36,6 +42,14 @@ pl:has_price_range a owl:ObjectProperty .
 
 pl:has_water_requirements a owl:ObjectProperty .
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/is_dutch_name_from
+
+pl:is_dutch_name_from a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/is_latin_name_from
+
+pl:is_latin_name_from a owl:ObjectProperty .
+# 
 # 
 # 
 # #################################################################
@@ -45,15 +59,24 @@ pl:has_water_requirements a owl:ObjectProperty .
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/dutch_name
+
+pl:dutch_name a owl:Class ;
+	owl:equivalentClass _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty pl:is_dutch_name_from ;
+	owl:someValuesFrom owl:Thing .
+# 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/high
 
 pl:high a owl:Class ;
-	owl:equivalentClass _:genid1 .
+	owl:equivalentClass _:genid2 .
 
-_:genid1 a owl:Class ;
-	owl:oneOf _:genid2 .
+_:genid2 a owl:Class ;
+	owl:oneOf _:genid3 .
 
-_:genid2 a rdf:List ;
+_:genid3 a rdf:List ;
 	rdf:first pl:high ;
 	rdf:rest rdf:nil .
 
@@ -61,11 +84,24 @@ pl:high rdfs:subClassOf pl:water_requirements .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/latin_name
 
-pl:latin_name a owl:Class .
+pl:latin_name a owl:Class ;
+	owl:equivalentClass _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty pl:is_latin_name_from ;
+	owl:someValuesFrom owl:Thing .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/leaf_colour
 
-pl:leaf_colour a owl:Class .
+pl:leaf_colour a owl:Class ;
+	owl:equivalentClass _:genid5 .
+
+_:genid5 a owl:Class ;
+	owl:oneOf _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first pl:green ;
+	rdf:rest rdf:nil .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/light_requirements
 
@@ -74,12 +110,12 @@ pl:light_requirements a owl:Class .
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/low
 
 pl:low a owl:Class ;
-	owl:equivalentClass _:genid3 .
+	owl:equivalentClass _:genid7 .
 
-_:genid3 a owl:Class ;
-	owl:oneOf _:genid4 .
+_:genid7 a owl:Class ;
+	owl:oneOf _:genid8 .
 
-_:genid4 a rdf:List ;
+_:genid8 a rdf:List ;
 	rdf:first pl:low ;
 	rdf:rest rdf:nil .
 
@@ -88,12 +124,12 @@ pl:low rdfs:subClassOf pl:water_requirements .
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/medium
 
 pl:medium a owl:Class ;
-	owl:equivalentClass _:genid5 .
+	owl:equivalentClass _:genid9 .
 
-_:genid5 a owl:Class ;
-	owl:oneOf _:genid6 .
+_:genid9 a owl:Class ;
+	owl:oneOf _:genid10 .
 
-_:genid6 a rdf:List ;
+_:genid10 a rdf:List ;
 	rdf:first pl:medium ;
 	rdf:rest rdf:nil .
 
@@ -102,27 +138,27 @@ pl:medium rdfs:subClassOf pl:water_requirements .
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/plants
 
 pl:plants a owl:Class ;
-	owl:equivalentClass _:genid7 .
+	owl:equivalentClass _:genid11 .
 
-_:genid7 a owl:Restriction ;
+_:genid11 a owl:Restriction ;
 	owl:onProperty pl:has_leaf_colour ;
 	owl:someValuesFrom pl:leaf_colour .
 
-pl:plants owl:equivalentClass _:genid8 .
+pl:plants owl:equivalentClass _:genid12 .
 
-_:genid8 a owl:Restriction ;
+_:genid12 a owl:Restriction ;
 	owl:onProperty pl:has_light_requirements ;
 	owl:someValuesFrom pl:light_requirements .
 
-pl:plants owl:equivalentClass _:genid9 .
+pl:plants owl:equivalentClass _:genid13 .
 
-_:genid9 a owl:Restriction ;
+_:genid13 a owl:Restriction ;
 	owl:onProperty pl:has_water_requirements ;
 	owl:someValuesFrom pl:water_requirements .
 
-pl:plants owl:equivalentClass _:genid10 .
+pl:plants owl:equivalentClass _:genid14 .
 
-_:genid10 a owl:Restriction ;
+_:genid14 a owl:Restriction ;
 	owl:onProperty pl:has_latin_name ;
 	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	owl:onClass pl:latin_name .
@@ -147,7 +183,6 @@ pl:water_requirements a owl:Class .
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë
 
 pl:aloë a owl:NamedIndividual ;
-	owl:sameAs pl:aloë_vera ;
 	pl:has_latin_name pl:aloë_vera .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë_vera
@@ -158,13 +193,27 @@ pl:aloë_vera a owl:NamedIndividual , pl:latin_name ;
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/dracaena
 
 pl:dracaena a owl:NamedIndividual ;
-	owl:sameAs <http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> ;
 	pl:has_latin_name <http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> ;
 	pl:has_water_requirements pl:low .
+# 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/fan_palm
+
+pl:fan_palm a owl:NamedIndividual ;
+	pl:has_latin_name pl:livistona_rotundifolia ;
+	pl:has_leaf_colour pl:green ;
+	pl:has_water_requirements pl:high .
+# 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/green
+
+pl:green a owl:NamedIndividual .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/high
 
 pl:high a owl:NamedIndividual , pl:high .
+# 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/livistona_rotundifolia
+
+pl:livistona_rotundifolia a owl:NamedIndividual .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/low
 
@@ -173,6 +222,11 @@ pl:low a owl:NamedIndividual , pl:low .
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/medium
 
 pl:medium a owl:NamedIndividual , pl:medium .
+# 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/waaierpalm
+
+pl:waaierpalm a owl:NamedIndividual ;
+	pl:is_dutch_name_from pl:fan_palm .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.
 
