@@ -67,10 +67,6 @@ pl:medium rdf:type owl:Class ;
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/plants
 pl:plants rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                owl:onProperty pl:has_latin_name ;
-                                owl:someValuesFrom pl:latin_name
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty pl:has_leaf_colour ;
                                 owl:someValuesFrom pl:leaf_colour
                               ] ,
@@ -81,6 +77,11 @@ pl:plants rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty pl:has_water_requirements ;
                                 owl:someValuesFrom pl:water_requirements
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty pl:has_latin_name ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass pl:latin_name
                               ] .
 
 
