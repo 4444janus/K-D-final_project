@@ -1,0 +1,425 @@
+@prefix : <http://www.semanticweb.org/lieke/ontologies/mapping2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix map2: <http://www.semanticweb.org/lieke/ontologies/mapping2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/lieke/ontologies/mapping2> a owl:Ontology ;
+	owl:imports <http://www.semanticweb.org/lieke/ontologies/2018/9/mapping> .
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://dbpedia.org/resource/Alkanna_tinctoria
+
+<http://dbpedia.org/resource/Alkanna_tinctoria> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Amygdaloideae
+
+<http://dbpedia.org/resource/Amygdaloideae> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Apricot
+
+<http://dbpedia.org/resource/Apricot> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Arabidopsis
+
+<http://dbpedia.org/resource/Arabidopsis> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Arabidopsis_thaliana
+
+<http://dbpedia.org/resource/Arabidopsis_thaliana> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Areca_nut
+
+<http://dbpedia.org/resource/Areca_nut> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Asparagus
+
+<http://dbpedia.org/resource/Asparagus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> ;
+	<http://www.semanticweb.org/lieke/flora/hasUsage> <http://www.semanticweb.org/lieke/flora/Food> .
+# 
+# http://dbpedia.org/resource/Azadirachta_indica
+
+<http://dbpedia.org/resource/Azadirachta_indica> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Banana
+
+<http://dbpedia.org/resource/Banana> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Banksia
+
+<http://dbpedia.org/resource/Banksia> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Begonia
+
+<http://dbpedia.org/resource/Begonia> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Bramble_fruit
+
+<http://dbpedia.org/resource/Bramble_fruit> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Breadfruit
+
+<http://dbpedia.org/resource/Breadfruit> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Bromeliaceae
+
+<http://dbpedia.org/resource/Bromeliaceae> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cabbage
+
+<http://dbpedia.org/resource/Cabbage> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cabernet_Sauvignon
+
+<http://dbpedia.org/resource/Cabernet_Sauvignon> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Calamondin
+
+<http://dbpedia.org/resource/Calamondin> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cannabis
+
+<http://dbpedia.org/resource/Cannabis> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cassava
+
+<http://dbpedia.org/resource/Cassava> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cedrus
+
+<http://dbpedia.org/resource/Cedrus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Chardonnay
+
+<http://dbpedia.org/resource/Chardonnay> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cherry
+
+<http://dbpedia.org/resource/Cherry> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Chickpea
+
+<http://dbpedia.org/resource/Chickpea> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Chondrus_crispus
+
+<http://dbpedia.org/resource/Chondrus_crispus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Citrus
+
+<http://dbpedia.org/resource/Citrus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Clover
+
+<http://dbpedia.org/resource/Clover> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Coconut
+
+<http://dbpedia.org/resource/Coconut> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cocopah
+
+<http://dbpedia.org/resource/Cocopah> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cooking_plantain
+
+<http://dbpedia.org/resource/Cooking_plantain> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Crow_Nation
+
+<http://dbpedia.org/resource/Crow_Nation> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Cuscuta
+
+<http://dbpedia.org/resource/Cuscuta> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Datura_stramonium
+
+<http://dbpedia.org/resource/Datura_stramonium> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Douglas_fir
+
+<http://dbpedia.org/resource/Douglas_fir> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Drupe
+
+<http://dbpedia.org/resource/Drupe> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Eggplant
+
+<http://dbpedia.org/resource/Eggplant> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Einkorn_wheat
+
+<http://dbpedia.org/resource/Einkorn_wheat> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Eleusine_coracana
+
+<http://dbpedia.org/resource/Eleusine_coracana> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Epiphyte
+
+<http://dbpedia.org/resource/Epiphyte> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Eragrostis_tef
+
+<http://dbpedia.org/resource/Eragrostis_tef> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Erythronium
+
+<http://dbpedia.org/resource/Erythronium> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Eschscholzia_californica
+
+<http://dbpedia.org/resource/Eschscholzia_californica> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Eucalyptus
+
+<http://dbpedia.org/resource/Eucalyptus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Fallopia_japonica
+
+<http://dbpedia.org/resource/Fallopia_japonica> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Ficus
+
+<http://dbpedia.org/resource/Ficus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Flax
+
+<http://dbpedia.org/resource/Flax> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Fouquieria_columnaris
+
+<http://dbpedia.org/resource/Fouquieria_columnaris> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Fragaria
+
+<http://dbpedia.org/resource/Fragaria> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Gentiana
+
+<http://dbpedia.org/resource/Gentiana> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Gentiana_acaulis
+
+<http://dbpedia.org/resource/Gentiana_acaulis> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Genus
+
+<http://dbpedia.org/resource/Genus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Geranium
+
+<http://dbpedia.org/resource/Geranium> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Geranium_cinereum
+
+<http://dbpedia.org/resource/Geranium_cinereum> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Gossypium
+
+<http://dbpedia.org/resource/Gossypium> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Guar
+
+<http://dbpedia.org/resource/Guar> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Halophyte
+
+<http://dbpedia.org/resource/Halophyte> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Hay
+
+<http://dbpedia.org/resource/Hay> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Helianthus_annuus
+
+<http://dbpedia.org/resource/Helianthus_annuus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Horseradish
+
+<http://dbpedia.org/resource/Horseradish> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> ;
+	<http://www.semanticweb.org/lieke/flora/growsIn> <http://www.semanticweb.org/lieke/flora/soil> .
+# 
+# http://dbpedia.org/resource/Humulus
+
+<http://dbpedia.org/resource/Humulus> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Kava
+
+<http://dbpedia.org/resource/Kava> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Khat
+
+<http://dbpedia.org/resource/Khat> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Larrea_tridentata
+
+<http://dbpedia.org/resource/Larrea_tridentata> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Lettuce
+
+<http://dbpedia.org/resource/Lettuce> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> ;
+	owl:sameAs <http://www.semanticweb.org/lieke/flora/Lettuce> .
+# 
+# http://dbpedia.org/resource/Maclura_pomifera
+
+<http://dbpedia.org/resource/Maclura_pomifera> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Magnolia
+
+<http://dbpedia.org/resource/Magnolia> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Malpighia_emarginata
+
+<http://dbpedia.org/resource/Malpighia_emarginata> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Mangifera
+
+<http://dbpedia.org/resource/Mangifera> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Mango
+
+<http://dbpedia.org/resource/Mango> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Meliaceae
+
+<http://dbpedia.org/resource/Meliaceae> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Minimum_spanning_tree
+
+<http://dbpedia.org/resource/Minimum_spanning_tree> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Monocotyledon
+
+<http://dbpedia.org/resource/Monocotyledon> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Moraceae
+
+<http://dbpedia.org/resource/Moraceae> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Oak
+
+<http://dbpedia.org/resource/Oak> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Oat
+
+<http://dbpedia.org/resource/Oat> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Onion
+
+<http://dbpedia.org/resource/Onion> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Peach
+
+<http://dbpedia.org/resource/Peach> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Peanut
+
+<http://dbpedia.org/resource/Peanut> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Peperomia
+
+<http://dbpedia.org/resource/Peperomia> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Pine
+
+<http://dbpedia.org/resource/Pine> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Pineapple
+
+<http://dbpedia.org/resource/Pineapple> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Pistachio
+
+<http://dbpedia.org/resource/Pistachio> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Plantago
+
+<http://dbpedia.org/resource/Plantago> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Plum
+
+<http://dbpedia.org/resource/Plum> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Poaceae
+
+<http://dbpedia.org/resource/Poaceae> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Proso_millet
+
+<http://dbpedia.org/resource/Proso_millet> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Pseudotsuga
+
+<http://dbpedia.org/resource/Pseudotsuga> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Pseudotsuga_macrocarpa
+
+<http://dbpedia.org/resource/Pseudotsuga_macrocarpa> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Pseudotsuga_menziesii_var._glauca
+
+<http://dbpedia.org/resource/Pseudotsuga_menziesii_var._glauca> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Puebloan_peoples
+
+<http://dbpedia.org/resource/Puebloan_peoples> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Quercus_kelloggii
+
+<http://dbpedia.org/resource/Quercus_kelloggii> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Quinoa
+
+<http://dbpedia.org/resource/Quinoa> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rafflesia
+
+<http://dbpedia.org/resource/Rafflesia> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rambutan
+
+<http://dbpedia.org/resource/Rambutan> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rhododendron
+
+<http://dbpedia.org/resource/Rhododendron> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rhubarb
+
+<http://dbpedia.org/resource/Rhubarb> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rice
+
+<http://dbpedia.org/resource/Rice> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rosoideae
+
+<http://dbpedia.org/resource/Rosoideae> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rubiaceae
+
+<http://dbpedia.org/resource/Rubiaceae> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Erythronium_'Pagoda'
+
+<http://dbpedia.org/resource/Erythronium_'Pagoda'> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://dbpedia.org/resource/Rhododendron_'President_Roosevelt'
+
+<http://dbpedia.org/resource/Rhododendron_'President_Roosevelt'> a owl:NamedIndividual , <http://www.semanticweb.org/lieke/flora/Plant> .
+# 
+# http://www.semanticweb.org/lieke/flora/Lettuce
+# 
+# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
