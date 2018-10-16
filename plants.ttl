@@ -5,264 +5,232 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/janus/ontologies/2018/9/plants> .
 
-<http://www.semanticweb.org/janus/ontologies/2018/9/plants> a owl:Ontology .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_dutch_name
+<http://www.semanticweb.org/janus/ontologies/2018/9/plants> rdf:type owl:Ontology .
 
-pl:has_dutch_name a owl:ObjectProperty ;
-	owl:inverseOf pl:is_dutch_name_from .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_latin_name
+#################################################################
+#    Object Properties
+#################################################################
 
-pl:has_latin_name a owl:ObjectProperty ;
-	owl:inverseOf pl:is_latin_name_from .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_leaf_colour
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_dutch_name
+pl:has_dutch_name rdf:type owl:ObjectProperty ;
+                  owl:inverseOf pl:is_dutch_name_from .
 
-pl:has_leaf_colour a owl:ObjectProperty .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_light_requirements
 
-pl:has_light_requirements a owl:ObjectProperty .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_price_range
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_latin_name
+pl:has_latin_name rdf:type owl:ObjectProperty ;
+                  owl:inverseOf pl:is_latin_name_from .
 
-pl:has_price_range a owl:ObjectProperty .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_special_feature
 
-pl:has_special_feature a owl:ObjectProperty .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_water_requirements
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_leaf_colour
+pl:has_leaf_colour rdf:type owl:ObjectProperty .
 
-pl:has_water_requirements a owl:ObjectProperty .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/is_dutch_name_from
 
-pl:is_dutch_name_from a owl:ObjectProperty .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/is_latin_name_from
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_light_requirements
+pl:has_light_requirements rdf:type owl:ObjectProperty .
 
-pl:is_latin_name_from a owl:ObjectProperty .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/dutch_name
 
-pl:dutch_name a owl:Class ;
-	owl:equivalentClass _:genid1 .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_price_range
+pl:has_price_range rdf:type owl:ObjectProperty .
 
-_:genid1 a owl:Restriction ;
-	owl:onProperty pl:is_dutch_name_from ;
-	owl:someValuesFrom owl:Thing .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/high
 
-pl:high a owl:Class ;
-	owl:equivalentClass _:genid2 .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_special_feature
+pl:has_special_feature rdf:type owl:ObjectProperty .
 
-_:genid2 a owl:Class ;
-	owl:oneOf _:genid3 .
 
-_:genid3 a rdf:List ;
-	rdf:first pl:high ;
-	rdf:rest rdf:nil .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_water_requirements
+pl:has_water_requirements rdf:type owl:ObjectProperty .
 
-pl:high rdfs:subClassOf pl:water_requirements .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/latin_name
 
-pl:latin_name a owl:Class ;
-	owl:equivalentClass _:genid4 .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/is_dutch_name_from
+pl:is_dutch_name_from rdf:type owl:ObjectProperty .
 
-_:genid4 a owl:Restriction ;
-	owl:onProperty pl:is_latin_name_from ;
-	owl:someValuesFrom owl:Thing .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/leaf_colour
 
-pl:leaf_colour a owl:Class ;
-	owl:equivalentClass _:genid5 .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/is_latin_name_from
+pl:is_latin_name_from rdf:type owl:ObjectProperty .
 
-_:genid5 a owl:Class ;
-	owl:oneOf _:genid6 .
 
-_:genid6 a rdf:List ;
-	rdf:first pl:green ;
-	rdf:rest rdf:nil .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/light_requirements
+#################################################################
+#    Classes
+#################################################################
 
-pl:light_requirements a owl:Class .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/low
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/dutch_name
+pl:dutch_name rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty pl:is_dutch_name_from ;
+                                    owl:someValuesFrom owl:Thing
+                                  ] .
 
-pl:low a owl:Class ;
-	owl:equivalentClass _:genid7 .
 
-_:genid7 a owl:Class ;
-	owl:oneOf _:genid8 .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/high
+pl:high rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:oneOf ( pl:high
+                                        )
+                            ] ;
+        rdfs:subClassOf pl:light_requirements ,
+                        pl:water_requirements .
 
-_:genid8 a rdf:List ;
-	rdf:first pl:low ;
-	rdf:rest rdf:nil .
 
-pl:low rdfs:subClassOf pl:water_requirements .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/medium
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/latin_name
+pl:latin_name rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty pl:is_latin_name_from ;
+                                    owl:someValuesFrom owl:Thing
+                                  ] .
 
-pl:medium a owl:Class ;
-	owl:equivalentClass _:genid9 .
 
-_:genid9 a owl:Class ;
-	owl:oneOf _:genid10 .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/leaf_colour
+pl:leaf_colour rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:oneOf ( pl:green
+                                               )
+                                   ] .
 
-_:genid10 a rdf:List ;
-	rdf:first pl:medium ;
-	rdf:rest rdf:nil .
 
-pl:medium rdfs:subClassOf pl:water_requirements .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/plants
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/light_requirements
+pl:light_requirements rdf:type owl:Class .
 
-pl:plants a owl:Class ;
-	owl:equivalentClass _:genid11 .
 
-_:genid11 a owl:Restriction ;
-	owl:onProperty pl:has_leaf_colour ;
-	owl:someValuesFrom pl:leaf_colour .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/low
+pl:low rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:oneOf ( pl:low
+                                       )
+                           ] ;
+       rdfs:subClassOf pl:light_requirements ,
+                       pl:water_requirements .
 
-pl:plants owl:equivalentClass _:genid12 .
 
-_:genid12 a owl:Restriction ;
-	owl:onProperty pl:has_light_requirements ;
-	owl:someValuesFrom pl:light_requirements .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/medium
+pl:medium rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( pl:medium
+                                          )
+                              ] ;
+          rdfs:subClassOf pl:light_requirements ,
+                          pl:water_requirements .
 
-pl:plants owl:equivalentClass _:genid13 .
 
-_:genid13 a owl:Restriction ;
-	owl:onProperty pl:has_water_requirements ;
-	owl:someValuesFrom pl:water_requirements .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/plants
+pl:plants rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty pl:has_leaf_colour ;
+                                owl:someValuesFrom pl:leaf_colour
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty pl:has_light_requirements ;
+                                owl:someValuesFrom pl:light_requirements
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty pl:has_water_requirements ;
+                                owl:someValuesFrom pl:water_requirements
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty pl:has_latin_name ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass pl:latin_name
+                              ] .
 
-pl:plants owl:equivalentClass _:genid14 .
 
-_:genid14 a owl:Restriction ;
-	owl:onProperty pl:has_latin_name ;
-	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	owl:onClass pl:latin_name .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/price_range
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/price_range
+pl:price_range rdf:type owl:Class .
 
-pl:price_range a owl:Class .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/special_features
 
-pl:special_features a owl:Class .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/water_requirements
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/special_features
+pl:special_features rdf:type owl:Class .
 
-pl:water_requirements a owl:Class .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/air_purifying
 
-pl:air_purifying a owl:NamedIndividual , pl:special_features .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/water_requirements
+pl:water_requirements rdf:type owl:Class .
 
-pl:aloë a owl:NamedIndividual ;
-	pl:has_latin_name pl:aloë_vera .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë_vera
 
-pl:aloë_vera a owl:NamedIndividual , pl:latin_name ;
-	pl:has_water_requirements pl:medium .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/basil
+#################################################################
+#    Individuals
+#################################################################
 
-pl:basil a owl:NamedIndividual ;
-	pl:has_dutch_name pl:basilicum ;
-	pl:has_latin_name pl:ocimum_basilicum ;
-	pl:has_leaf_colour pl:green ;
-	pl:has_special_feature pl:edible .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/basilicum
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/air_purifying
+pl:air_purifying rdf:type owl:NamedIndividual ,
+                          pl:special_features .
 
-pl:basilicum a owl:NamedIndividual .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/dracaena
 
-pl:dracaena a owl:NamedIndividual ;
-	pl:has_latin_name <http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> ;
-	pl:has_water_requirements pl:low .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/edible
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë
+pl:aloë rdf:type owl:NamedIndividual ;
+        pl:has_latin_name pl:aloë_vera .
 
-pl:edible a owl:NamedIndividual , pl:special_features .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/fan_palm
 
-pl:fan_palm a owl:NamedIndividual ;
-	pl:has_latin_name pl:livistona_rotundifolia ;
-	pl:has_leaf_colour pl:green ;
-	pl:has_special_feature pl:air_purifying ;
-	pl:has_water_requirements pl:high .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/green
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë_vera
+pl:aloë_vera rdf:type owl:NamedIndividual ,
+                      pl:latin_name ;
+             pl:has_water_requirements pl:medium .
 
-pl:green a owl:NamedIndividual .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/high
 
-pl:high a owl:NamedIndividual , pl:high .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/livistona_rotundifolia
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/basil
+pl:basil rdf:type owl:NamedIndividual ;
+         pl:has_dutch_name pl:basilicum ;
+         pl:has_latin_name pl:ocimum_basilicum ;
+         pl:has_leaf_colour pl:green ;
+         pl:has_special_feature pl:edible .
 
-pl:livistona_rotundifolia a owl:NamedIndividual .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/low
 
-pl:low a owl:NamedIndividual , pl:low .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/medium
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/basilicum
+pl:basilicum rdf:type owl:NamedIndividual .
 
-pl:medium a owl:NamedIndividual , pl:medium .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/ocimum_basilicum
 
-pl:ocimum_basilicum a owl:NamedIndividual .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/waaierpalm
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/dracaena
+pl:dracaena rdf:type owl:NamedIndividual ;
+            pl:has_latin_name <http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> ;
+            pl:has_water_requirements pl:low .
 
-pl:waaierpalm a owl:NamedIndividual ;
-	pl:is_dutch_name_from pl:fan_palm .
-# 
-# http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.
 
-<http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> a owl:NamedIndividual .
-# 
-# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/edible
+pl:edible rdf:type owl:NamedIndividual ,
+                   pl:special_features .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/fan_palm
+pl:fan_palm rdf:type owl:NamedIndividual ;
+            pl:has_latin_name pl:livistona_rotundifolia ;
+            pl:has_leaf_colour pl:green ;
+            pl:has_special_feature pl:air_purifying ;
+            pl:has_water_requirements pl:high .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/green
+pl:green rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/high
+pl:high rdf:type owl:NamedIndividual ,
+                 pl:high .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/livistona_rotundifolia
+pl:livistona_rotundifolia rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/low
+pl:low rdf:type owl:NamedIndividual ,
+                pl:low .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/medium
+pl:medium rdf:type owl:NamedIndividual ,
+                   pl:medium .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/ocimum_basilicum
+pl:ocimum_basilicum rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/waaierpalm
+pl:waaierpalm rdf:type owl:NamedIndividual ;
+              pl:is_dutch_name_from pl:fan_palm .
+
+
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.
+<http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
