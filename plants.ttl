@@ -27,8 +27,8 @@ pl:has_latin_name rdf:type owl:ObjectProperty ;
 pl:has_leaf_colour rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_light_requirements
-pl:has_light_requirements rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_light_requirement
+pl:has_light_requirement rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_price_range
@@ -39,8 +39,8 @@ pl:has_price_range rdf:type owl:ObjectProperty .
 pl:has_special_feature rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_water_requirements
-pl:has_water_requirements rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_water_requirement
+pl:has_water_requirement rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/is_dutch_name_from
@@ -124,11 +124,11 @@ pl:plant rdf:type owl:Class ;
                                owl:someValuesFrom pl:leaf_colour
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty pl:has_light_requirements ;
+                               owl:onProperty pl:has_light_requirement ;
                                owl:someValuesFrom pl:light_requirement
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty pl:has_water_requirements ;
+                               owl:onProperty pl:has_water_requirement ;
                                owl:someValuesFrom pl:water_requirement
                              ] ,
                              [ rdf:type owl:Restriction ;
@@ -167,7 +167,7 @@ pl:aloë rdf:type owl:NamedIndividual ;
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë_vera
 pl:aloë_vera rdf:type owl:NamedIndividual ,
                       pl:latin_name ;
-             pl:has_water_requirements pl:medium .
+             pl:has_water_requirement pl:medium .
 
 
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/basil
@@ -185,7 +185,7 @@ pl:basilicum rdf:type owl:NamedIndividual .
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/dracaena
 pl:dracaena rdf:type owl:NamedIndividual ;
             pl:has_latin_name <http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> ;
-            pl:has_water_requirements pl:low .
+            pl:has_water_requirement pl:low .
 
 
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/edible
@@ -198,7 +198,7 @@ pl:fan_palm rdf:type owl:NamedIndividual ;
             pl:has_latin_name pl:livistona_rotundifolia ;
             pl:has_leaf_colour pl:green ;
             pl:has_special_feature pl:air_purifying ;
-            pl:has_water_requirements pl:high .
+            pl:has_water_requirement pl:high .
 
 
 ###  http://www.semanticweb.org/janus/ontologies/2018/9/plants/green
