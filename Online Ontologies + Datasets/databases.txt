@@ -1,0 +1,5 @@
+https://plants.sc.egov.usda.gov/
+https://www.gbif.org/
+https://garden.org/
+http://dbpedia.org/
+https://www.accessdata.fda.gov/scripts/plantox/

@@ -1,0 +1,4 @@
+https://www.ebi.ac.uk/ols/ontologies/po
+http://www.obofoundry.org/ontology/peco.html
+http://dbpedia.org/ontology/Plant
+https://en.wikipedia.org/wiki/Plant_ontology
