@@ -38,6 +38,10 @@ pl:has_light_requirements a owl:ObjectProperty .
 
 pl:has_price_range a owl:ObjectProperty .
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_special_feature
+
+pl:has_special_feature a owl:ObjectProperty .
+# 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/has_water_requirements
 
 pl:has_water_requirements a owl:ObjectProperty .
@@ -167,6 +171,10 @@ _:genid14 a owl:Restriction ;
 
 pl:price_range a owl:Class .
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/special_features
+
+pl:special_features a owl:Class .
+# 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/water_requirements
 
 pl:water_requirements a owl:Class .
@@ -180,6 +188,10 @@ pl:water_requirements a owl:Class .
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/air_purifying
+
+pl:air_purifying a owl:NamedIndividual , pl:special_features .
+# 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/aloë
 
 pl:aloë a owl:NamedIndividual ;
@@ -190,17 +202,34 @@ pl:aloë a owl:NamedIndividual ;
 pl:aloë_vera a owl:NamedIndividual , pl:latin_name ;
 	pl:has_water_requirements pl:medium .
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/basil
+
+pl:basil a owl:NamedIndividual ;
+	pl:has_dutch_name pl:basilicum ;
+	pl:has_latin_name pl:ocimum_basilicum ;
+	pl:has_leaf_colour pl:green ;
+	pl:has_special_feature pl:edible .
+# 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/basilicum
+
+pl:basilicum a owl:NamedIndividual .
+# 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/dracaena
 
 pl:dracaena a owl:NamedIndividual ;
 	pl:has_latin_name <http://www.semanticweb.org/janus/ontologies/2018/9/plants/yucca_sp.> ;
 	pl:has_water_requirements pl:low .
 # 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/edible
+
+pl:edible a owl:NamedIndividual , pl:special_features .
+# 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/fan_palm
 
 pl:fan_palm a owl:NamedIndividual ;
 	pl:has_latin_name pl:livistona_rotundifolia ;
 	pl:has_leaf_colour pl:green ;
+	pl:has_special_feature pl:air_purifying ;
 	pl:has_water_requirements pl:high .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/green
@@ -222,6 +251,10 @@ pl:low a owl:NamedIndividual , pl:low .
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/medium
 
 pl:medium a owl:NamedIndividual , pl:medium .
+# 
+# http://www.semanticweb.org/janus/ontologies/2018/9/plants/ocimum_basilicum
+
+pl:ocimum_basilicum a owl:NamedIndividual .
 # 
 # http://www.semanticweb.org/janus/ontologies/2018/9/plants/waaierpalm
 
