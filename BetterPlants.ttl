@@ -1,5 +1,5 @@
-@prefix : <http://www.semanticweb.org/Ruud/BetterPlants#> .
-@prefix pl: <http://www.semanticweb.org/Ruud/BetterPlants/> .
+@prefix : <http://www.semanticweb.org/ruud/BetterPlants#> .
+@prefix pl: <http://www.semanticweb.org/ruud/BetterPlants/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -14,23 +14,23 @@
 #################################################################
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/has_leaf_colour
-<http://www.semanticweb.org/ruud/BetterPlants/has_leaf_colour> rdf:type owl:ObjectProperty .
+pl:has_leaf_colour rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/has_light_requirement
-<http://www.semanticweb.org/ruud/BetterPlants/has_light_requirement> rdf:type owl:ObjectProperty .
+pl:has_light_requirement rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/has_price_range
-<http://www.semanticweb.org/ruud/BetterPlants/has_price_range> rdf:type owl:ObjectProperty .
+pl:has_price_range rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/has_special_feature
-<http://www.semanticweb.org/ruud/BetterPlants/has_special_feature> rdf:type owl:ObjectProperty .
+pl:has_special_feature rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement
-<http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement> rdf:type owl:ObjectProperty .
+pl:has_water_requirement rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -38,7 +38,7 @@
 #################################################################
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/has_latin_name
-<http://www.semanticweb.org/ruud/BetterPlants/has_latin_name> rdf:type owl:DatatypeProperty .
+pl:has_latin_name rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -46,129 +46,129 @@
 #################################################################
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/desert_plant
-<http://www.semanticweb.org/ruud/BetterPlants/desert_plant> rdf:type owl:Class ;
-                                                            owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_light_requirement> ;
-                                                                                                         owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                              owl:unionOf ( <http://www.semanticweb.org/ruud/BetterPlants/high>
-                                                                                                                                            <http://www.semanticweb.org/ruud/BetterPlants/medium>
-                                                                                                                                          )
-                                                                                                                            ]
-                                                                                                       ]
-                                                                                                       [ rdf:type owl:Restriction ;
-                                                                                                         owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement> ;
-                                                                                                         owl:someValuesFrom <http://www.semanticweb.org/ruud/BetterPlants/low>
-                                                                                                       ]
-                                                                                                     ) ;
-                                                                                  rdf:type owl:Class
-                                                                                ] ;
-                                                            rdfs:subClassOf <http://www.semanticweb.org/ruud/BetterPlants/plant> .
+pl:desert_plant rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty pl:has_light_requirement ;
+                                                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                  owl:unionOf ( pl:high
+                                                                                                pl:medium
+                                                                                              )
+                                                                                ]
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty pl:has_water_requirement ;
+                                                             owl:someValuesFrom pl:low
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf pl:plant .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/high
-<http://www.semanticweb.org/ruud/BetterPlants/high> rdf:type owl:Class ;
-                                                    owl:equivalentClass [ rdf:type owl:Class ;
-                                                                          owl:oneOf ( <http://www.semanticweb.org/ruud/BetterPlants/high>
-                                                                                    )
-                                                                        ] ;
-                                                    rdfs:subClassOf <http://www.semanticweb.org/ruud/BetterPlants/light_requirement> ,
-                                                                    <http://www.semanticweb.org/ruud/BetterPlants/water_requirement> .
+pl:high rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:oneOf ( pl:high
+                                        )
+                            ] ;
+        rdfs:subClassOf pl:light_requirement ,
+                        pl:water_requirement .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/leaf_colour
-<http://www.semanticweb.org/ruud/BetterPlants/leaf_colour> rdf:type owl:Class .
+pl:leaf_colour rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/light_requirement
-<http://www.semanticweb.org/ruud/BetterPlants/light_requirement> rdf:type owl:Class .
+pl:light_requirement rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/low
-<http://www.semanticweb.org/ruud/BetterPlants/low> rdf:type owl:Class ;
-                                                   owl:equivalentClass [ rdf:type owl:Class ;
-                                                                         owl:oneOf ( <http://www.semanticweb.org/ruud/BetterPlants/low>
-                                                                                   )
-                                                                       ] ;
-                                                   rdfs:subClassOf <http://www.semanticweb.org/ruud/BetterPlants/light_requirement> ,
-                                                                   <http://www.semanticweb.org/ruud/BetterPlants/water_requirement> .
+pl:low rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:oneOf ( pl:low
+                                       )
+                           ] ;
+       rdfs:subClassOf pl:light_requirement ,
+                       pl:water_requirement .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/medium
-<http://www.semanticweb.org/ruud/BetterPlants/medium> rdf:type owl:Class ;
-                                                      owl:equivalentClass [ rdf:type owl:Class ;
-                                                                            owl:oneOf ( <http://www.semanticweb.org/ruud/BetterPlants/medium>
-                                                                                      )
-                                                                          ] ;
-                                                      rdfs:subClassOf <http://www.semanticweb.org/ruud/BetterPlants/light_requirement> ,
-                                                                      <http://www.semanticweb.org/ruud/BetterPlants/water_requirement> .
+pl:medium rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( pl:medium
+                                          )
+                              ] ;
+          rdfs:subClassOf pl:light_requirement ,
+                          pl:water_requirement .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/plant
-<http://www.semanticweb.org/ruud/BetterPlants/plant> rdf:type owl:Class ;
-                                                     owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_leaf_colour> ;
-                                                                           owl:someValuesFrom <http://www.semanticweb.org/ruud/BetterPlants/leaf_colour>
-                                                                         ] ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_light_requirement> ;
-                                                                           owl:someValuesFrom <http://www.semanticweb.org/ruud/BetterPlants/light_requirement>
-                                                                         ] ,
-                                                                         [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement> ;
-                                                                           owl:someValuesFrom <http://www.semanticweb.org/ruud/BetterPlants/water_requirement>
-                                                                         ] .
+pl:plant rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty pl:has_leaf_colour ;
+                               owl:someValuesFrom pl:leaf_colour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty pl:has_light_requirement ;
+                               owl:someValuesFrom pl:light_requirement
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty pl:has_water_requirement ;
+                               owl:someValuesFrom pl:water_requirement
+                             ] .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/price_range
-<http://www.semanticweb.org/ruud/BetterPlants/price_range> rdf:type owl:Class .
+pl:price_range rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/special_feature
-<http://www.semanticweb.org/ruud/BetterPlants/special_feature> rdf:type owl:Class .
+pl:special_feature rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/swamp_plant
-<http://www.semanticweb.org/ruud/BetterPlants/swamp_plant> rdf:type owl:Class ;
-                                                           owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                        owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_light_requirement> ;
-                                                                                                        owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                             owl:unionOf ( <http://www.semanticweb.org/ruud/BetterPlants/low>
-                                                                                                                                           <http://www.semanticweb.org/ruud/BetterPlants/medium>
-                                                                                                                                         )
-                                                                                                                           ]
-                                                                                                      ]
-                                                                                                      [ rdf:type owl:Restriction ;
-                                                                                                        owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement> ;
-                                                                                                        owl:someValuesFrom <http://www.semanticweb.org/ruud/BetterPlants/high>
-                                                                                                      ]
-                                                                                                    ) ;
-                                                                                 rdf:type owl:Class
-                                                                               ] ;
-                                                           rdfs:subClassOf <http://www.semanticweb.org/ruud/BetterPlants/plant> .
+pl:swamp_plant rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty pl:has_light_requirement ;
+                                                            owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                 owl:unionOf ( pl:low
+                                                                                               pl:medium
+                                                                                             )
+                                                                               ]
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty pl:has_water_requirement ;
+                                                            owl:someValuesFrom pl:high
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf pl:plant .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/temperate_plant
-<http://www.semanticweb.org/ruud/BetterPlants/temperate_plant> rdf:type owl:Class ;
-                                                               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_light_requirement> ;
-                                                                                                            owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                                 owl:unionOf ( <http://www.semanticweb.org/ruud/BetterPlants/low>
-                                                                                                                                               <http://www.semanticweb.org/ruud/BetterPlants/medium>
-                                                                                                                                             )
-                                                                                                                               ]
-                                                                                                          ]
-                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                            owl:onProperty <http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement> ;
-                                                                                                            owl:someValuesFrom <http://www.semanticweb.org/ruud/BetterPlants/medium>
-                                                                                                          ]
-                                                                                                        ) ;
-                                                                                     rdf:type owl:Class
-                                                                                   ] ;
-                                                               rdfs:subClassOf <http://www.semanticweb.org/ruud/BetterPlants/plant> .
+pl:temperate_plant rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty pl:has_light_requirement ;
+                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                     owl:unionOf ( pl:low
+                                                                                                   pl:medium
+                                                                                                 )
+                                                                                   ]
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty pl:has_water_requirement ;
+                                                                owl:someValuesFrom pl:medium
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf pl:plant .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/water_requirement
-<http://www.semanticweb.org/ruud/BetterPlants/water_requirement> rdf:type owl:Class .
+pl:water_requirement rdf:type owl:Class .
 
 
 #################################################################
@@ -176,82 +176,82 @@
 #################################################################
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/air_purifying
-<http://www.semanticweb.org/ruud/BetterPlants/air_purifying> rdf:type owl:NamedIndividual ,
-                                                                      <http://www.semanticweb.org/ruud/BetterPlants/special_feature> ;
-                                                             rdfs:label "Air purifying"@en .
+pl:air_purifying rdf:type owl:NamedIndividual ,
+                          pl:special_feature ;
+                 rdfs:label "Air purifying"@en .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/aloe_vera
-<http://www.semanticweb.org/ruud/BetterPlants/aloe_vera> rdf:type owl:NamedIndividual ;
-                                                         <http://www.semanticweb.org/ruud/BetterPlants/has_latin_name> "Aloë vera" ;
-                                                         rdfs:label "Aloe vera"@en ,
-                                                                    "Aloë vera"@nl .
+pl:aloe_vera rdf:type owl:NamedIndividual ;
+             pl:has_latin_name "Aloë vera" ;
+             rdfs:label "Aloe vera"@en ,
+                        "Aloë vera"@nl .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/basil
-<http://www.semanticweb.org/ruud/BetterPlants/basil> rdf:type owl:NamedIndividual ;
-                                                     <http://www.semanticweb.org/ruud/BetterPlants/has_leaf_colour> <http://www.semanticweb.org/ruud/BetterPlants/green> ;
-                                                     <http://www.semanticweb.org/ruud/BetterPlants/has_special_feature> <http://www.semanticweb.org/ruud/BetterPlants/edible> ;
-                                                     <http://www.semanticweb.org/ruud/BetterPlants/has_latin_name> "Ocimum basilicum" ;
-                                                     rdfs:label "Basil"@en ,
-                                                                "Basilicum"@nl .
+pl:basil rdf:type owl:NamedIndividual ;
+         pl:has_leaf_colour pl:green ;
+         pl:has_special_feature pl:edible ;
+         pl:has_latin_name "Ocimum basilicum" ;
+         rdfs:label "Basil"@en ,
+                    "Basilicum"@nl .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/dracaena
-<http://www.semanticweb.org/ruud/BetterPlants/dracaena> rdf:type owl:NamedIndividual ;
-                                                        <http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement> <http://www.semanticweb.org/ruud/BetterPlants/low> ;
-                                                        <http://www.semanticweb.org/ruud/BetterPlants/has_latin_name> "Dracaena" ;
-                                                        rdfs:label "Dracaena"@en ,
-                                                                   "Dracaena"@nl .
+pl:dracaena rdf:type owl:NamedIndividual ;
+            pl:has_water_requirement pl:low ;
+            pl:has_latin_name "Dracaena" ;
+            rdfs:label "Dracaena"@en ,
+                       "Dracaena"@nl .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/edible
-<http://www.semanticweb.org/ruud/BetterPlants/edible> rdf:type owl:NamedIndividual ,
-                                                               <http://www.semanticweb.org/ruud/BetterPlants/special_feature> ;
-                                                      rdfs:label "Edible"@en .
+pl:edible rdf:type owl:NamedIndividual ,
+                   pl:special_feature ;
+          rdfs:label "Edible"@en .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/fan_palm
-<http://www.semanticweb.org/ruud/BetterPlants/fan_palm> rdf:type owl:NamedIndividual ;
-                                                        <http://www.semanticweb.org/ruud/BetterPlants/has_leaf_colour> <http://www.semanticweb.org/ruud/BetterPlants/green> ;
-                                                        <http://www.semanticweb.org/ruud/BetterPlants/has_special_feature> <http://www.semanticweb.org/ruud/BetterPlants/air_purifying> ;
-                                                        <http://www.semanticweb.org/ruud/BetterPlants/has_water_requirement> <http://www.semanticweb.org/ruud/BetterPlants/high> ;
-                                                        rdfs:label "Fan Palm"@en ,
-                                                                   "Waaierpalm"@nl .
+pl:fan_palm rdf:type owl:NamedIndividual ;
+            pl:has_leaf_colour pl:green ;
+            pl:has_special_feature pl:air_purifying ;
+            pl:has_water_requirement pl:high ;
+            rdfs:label "Fan Palm"@en ,
+                       "Waaierpalm"@nl .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/green
-<http://www.semanticweb.org/ruud/BetterPlants/green> rdf:type owl:NamedIndividual ,
-                                                              <http://www.semanticweb.org/ruud/BetterPlants/leaf_colour> ;
-                                                     rdfs:label "Green"@en .
+pl:green rdf:type owl:NamedIndividual ,
+                  pl:leaf_colour ;
+         rdfs:label "Green"@en .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/high
-<http://www.semanticweb.org/ruud/BetterPlants/high> rdf:type owl:NamedIndividual ,
-                                                             <http://www.semanticweb.org/ruud/BetterPlants/high> .
+pl:high rdf:type owl:NamedIndividual ,
+                 pl:high .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/low
-<http://www.semanticweb.org/ruud/BetterPlants/low> rdf:type owl:NamedIndividual ,
-                                                            <http://www.semanticweb.org/ruud/BetterPlants/low> .
+pl:low rdf:type owl:NamedIndividual ,
+                pl:low .
 
 
 ###  http://www.semanticweb.org/ruud/BetterPlants/medium
-<http://www.semanticweb.org/ruud/BetterPlants/medium> rdf:type owl:NamedIndividual ,
-                                                               <http://www.semanticweb.org/ruud/BetterPlants/medium> .
+pl:medium rdf:type owl:NamedIndividual ,
+                   pl:medium .
 
 
 #################################################################
 #    Annotations
 #################################################################
 
-<http://www.semanticweb.org/ruud/BetterPlants/high> rdfs:label "High"@en .
+pl:high rdfs:label "High"@en .
 
 
-<http://www.semanticweb.org/ruud/BetterPlants/low> rdfs:label "Low"@en .
+pl:low rdfs:label "Low"@en .
 
 
-<http://www.semanticweb.org/ruud/BetterPlants/medium> rdfs:label "Medium"@en .
+pl:medium rdfs:label "Medium"@en .
 
 
 ###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
