@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plant chooser</title>
+
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="css/style.css"></script>
+
+    <style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      body {
+      background: #9a91ff;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    
+             #main {
+                 margin-left: 1%;
+             }    
+        
+    button {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: yellowgreen;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px 16px;
+      font-weight: bold;
+      color: #222;
+      transition: all 0.1s;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    }
+    button:focus {
+      outline: none;
+    }
+    button:hover {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      color: black;
+    }
+    
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+    <div id="main">
+        <h1>PLANTEN</h1>
+        <img src="icon.png" alt="icon">
+
+        <select name="planten">
+            <option value="Appel">Appel</option>
+            <option value="Tomaat">Tomaat</option>
+            <option value="cactus">cactus</option>
+            <option value="banaan">banaan</option>
+        </select>
+        <form>
+
+            <h4>test123</h4>
+
+            <input type="radio" id="price range" name="choice" value="price"> i want a plant <br>
+            <input type="radio" id="price range" name="choice" value="price"> i want a plant <br>
+            <input type="radio" id="price range" name="choice" value="price"> i want a plant <br>
+            <input type="radio" id="price range" name="choice" value="price"> i want a plant <br>
+
+            <h4>What kind of plant?</h4>
+
+            <input type="checkbox" id="test" value="test"> test <br>
+            <input type="checkbox" id="test" value="test"> test <br>
+            <input type="checkbox" id="test" value="test"> test <br>
+            <input type="checkbox" id="test" value="test"> test <br>
+
+
+
+        </form>
+
+
+    </div>
+
+
+
+    <svg viewBox="0 0 100 1100" preserveAspectRatio="xMidYMax meet">
+        <g id="stems" fill="none" stroke="green"></g>
+        <g id="leaves"></g>
+    </svg>
+
+
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js'></script>
+
+
+
+    <script src="js/index.js"></script>
+
+
+
+
+
+</body>
+
+</html>
