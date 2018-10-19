@@ -3,3 +3,4 @@ http://www.obofoundry.org/ontology/peco.html
 http://dbpedia.org/ontology/Plant
 https://en.wikipedia.org/wiki/Plant_ontology
 https://raw.githubusercontent.com/Planteome/plant-trait-ontology/master/plant-trait-ontology.obo.owl
+http://aber-owl.net/ontology/PATO/
