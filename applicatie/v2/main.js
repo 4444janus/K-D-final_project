@@ -131,11 +131,10 @@ function mainCtrl($scope, $http){
             
             $("#result").empty();
             
-            console.log(results);
+            console.log(results.length);
             console.log(results[0].plant.value);
             
-//            for (var i = 0; i > results.length; i++) 
-            $('#result').append('<tr><td>' + results[0].plant.value + '</td><td>' + results[1].plant.value + '</td></tr>')
+            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].plant.value + '</td></tr>')
 
         //console.log(data);
         $scope.resultQ1=data;
