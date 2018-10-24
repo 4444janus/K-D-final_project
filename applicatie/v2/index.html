@@ -76,11 +76,11 @@
     </div>
 
     <div id="main">
-        <img src="icon.png" alt="icon" width="80" height="80">
-        <h1>Plant chooser
+        
+        <h1 id="titel">Plant chooser
 
         </h1>
-<!--
+        <!--
         <select name="planten">
             <option value="Appel">Appel</option>
             <option value="Tomaat">Tomaat</option>
@@ -94,40 +94,41 @@
 
             <input type="radio" id="inside" name="looking" value="price"> i want a plant for inside<br>
             <input type="radio" id="outside" name="looking" value="price"> i want a plant for outside<br>
-            
+
 
             <h4>What price range are you looking for?</h4>
 
-            <input type="checkbox" id="0" value="test"> 0 - 5 <br>
-            <input type="checkbox" id="5" value="test"> 5-10 <br>
-            <input type="checkbox" id="10" value="test"> 10 - 20 <br>
-            <input type="checkbox" id="20" value="test"> 20 - 30 <br>
-            <input type="checkbox" id="30" value="test"> 30 - 40 <br>
-            <input type="checkbox" id="40" value="test"> 40 + <br>
-            
-             <h4>How much light can you provide?</h4>
+            <input type="checkbox" name="price" id="0" value="test"> 0 - 5 <br>
+            <input type="checkbox" name="price" id="5" value="test"> 5-10 <br>
+            <input type="checkbox" name="price" id="10" value="test"> 10 - 20 <br>
+            <input type="checkbox" name="price" id="20" value="test"> 20 - 30 <br>
+            <input type="checkbox" name="price" id="30" value="test"> 30 - 40 <br>
+            <input type="checkbox" name="price" id="40" value="test"> 40 + <br>
+
+            <h4>How much light can you provide?</h4>
 
             <input type="checkbox" id="lowL" value="test"> low <br>
             <input type="checkbox" id="mediumL" value="test"> medium <br>
             <input type="checkbox" id="highL" value="test"> high <br>
-            
-                    <h4>How much water can you provide?</h4>
+
+            <h4>How much water can you provide?</h4>
 
             <input type="checkbox" id="lowW" value="test"> low <br>
             <input type="checkbox" id="mediumW" value="test"> medium <br>
             <input type="checkbox" id="highW" value="test"> high <br>
-          
-          
-         
+
+
+
 
 
 
         </form>
-
- <button id='search'>Search</button>     
+        <br>
+        <button id='search'>Search </button>
+        <img src="icon.png" alt="icon" width="80" height="80">
     </div>
     <div>
-        <h5>output <br> window</h5>
+        <h4>output <br> window</h4>
         <!--
         <canvas class="chart chart-bar" chart-data="myInstances" chart-labels="myClasses"> </canvas>
         <p>SELECT * WHERE { ?game igdb:is_rated ?obj . } LIMIT 10</p>
