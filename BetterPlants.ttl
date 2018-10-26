@@ -37,6 +37,10 @@ pl:has_water_requirement rdf:type owl:ObjectProperty .
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/ruud/BetterPlants/has_image
+pl:has_image rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.semanticweb.org/ruud/BetterPlants/has_latin_name
 pl:has_latin_name rdf:type owl:DatatypeProperty .
 
