@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/ruud/DBPediaOntology" uri="DBpediaOntology.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/ruud/BetterPlants" uri="BetterPlants.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/ruud/BetterPlants" uri="BetterPlants.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/ruud/csvPlants" uri="csvPlants.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/ruud/umbelrcOntology" uri="umbelrcOntolog.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/ruud/yagoOntology" uri="yagoOntology.ttl"/>
