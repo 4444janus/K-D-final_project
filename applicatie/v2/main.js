@@ -1,5 +1,7 @@
 angular.module('KRRclass', ['chart.js']).controller('MainCtrl', ['$scope', '$http', mainCtrl]);
 
+
+
 //function that runs when the search button is clicked
 $('#search').click(function () {
     var light = [];
@@ -122,6 +124,7 @@ function mainCtrl($scope, $http) {
     $scope.myAppName = "Awesomename";
     $scope.myAppList = ["codaonto:Study", "codaonto:Treatment", "codaonto:Variable"];
     $scope.mysparqlendpoint = "http://localhost:5820/plant/query?query="
+    $scope.dbpedia = "http://dbpedia.org/sparql?query="
 
 
 
@@ -136,12 +139,12 @@ function mainCtrl($scope, $http) {
     $scope.plantquery = "SELECT ?plant WHERE {  ?plant ?a ?lant .} LIMIT 20"
     $scope.plantquery2 = "SELECT ?plant  WHERE {  ?lant ?a ?plant .  FILTER (?plant) } LIMIT 20"
     $scope.plantquery3 = "PREFIX pl: <http://www.semanticweb.org/ruud/BetterPlants/> SELECT * WHERE { {?plant pl:has_latin_name ?latin .} UNION {?plant pl:has_water_requirement ?water .} UNION {?plant pl:has_special_feature ?special .} UNION {?plant pl:has_price_range ?price .} UNION {?plant pl:has_light_requirement ?light .} UNION {?plant pl:has_leaf_colour ?colour .}}"
+    $scope.querydbpedia = "PREFIX umbelrc: <http://umbel.org/umbel/rc/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT * WHERE {  ?plant a dbo:Plant .  ?plant a yago:Plant100017222 .  ?plant a umbelrc:Plant .  OPTIONAL{?plant dbo:thumbnail ?thumbnail} OPTIONAL{?plant dbo:abstract ?abstact . FILTER langMatches(lang(?abstact),'en')} OPTIONAL{?plant dbp:binomial ?binomial} OPTIONAL{?plant dbo:family ?family} OPTIONAL{?plant foaf:isPrimaryTopicOf ?wikiLink} } ORDER BY ?plant LIMIT 20"
     //url : $scope.mysparqlendpoint+encodeURI("Select ?s where { ?s a <http://data.vu.nl/coda/ontology/class#"+$scope.myarg+"> } limit 5").replace(/#/g, '%23'),
     //url : $scope.mysparqlendpoint+encodeURI("SELECT ?class (COUNT(?s) AS ?c) WHERE { ?s a ?class } GROUP BY ?class").replace(/#/g, '%23'),
     //encodeURI("SELECT ?class (COUNT(?s) AS ?c) WHERE { ?s a ?class } GROUP BY ?class").replace(/#/g, '%23'),
     //console.log($scope.mysparqlendpoint+encodeURI($scope.sparqlquery2).replace(/#/g, '%23'));
     console.log($scope.mysparqlendpoint + encodeURI($scope.plantquery).replace(/#/g, '%23'));
-
 
     //test
     //    var query = "SELECT ?plant \
@@ -160,14 +163,13 @@ function mainCtrl($scope, $http) {
     //
     //    });
 
-
     $http({
             method: "GET",
             headers: {
                 'Accept': 'application/sparql-results+json',
                 'Content-Type': 'application/sparql-results+json'
             },
-            url: $scope.mysparqlendpoint + encodeURI($scope.plantquery3).replace(/#/g, '%23'),
+            url: $scope.dbpedia + encodeURI($scope.querydbpedia).replace(/#/g, '%23'),
 
         })
         .success(function (data, status) {
@@ -176,17 +178,31 @@ function mainCtrl($scope, $http) {
 
             $("#result").empty();
 
-            console.log(results);
-            console.log(results[0].plant.value);
+            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].plant.value + '</td></tr>');    
+            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].abstact.value + '</td></tr>');
+            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].binomial.value + '</td></tr>');
+            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].family.value + '</td></tr>');
+            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].thumbnail.value + '</td></tr>');
+            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].wikiLink.value + '</td></tr>');
 
-            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].plant.value + '</td></tr>');
-            if (results[i].water.value)
-            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].latin.value + '</td></tr>');
-            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].water.value + '</td></tr>');
-            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].special.value + '</td></tr>');
-            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].price.value + '</td></tr>');
-            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].light.value + '</td></tr>');
-            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].colour.value + '</td></tr>');
+
+
+            //            console.log(results[0].plant.value);
+            //
+            //            for (var i = 0; i < results.length; i++)
+            //                if (results[i].water.value === undefined) i++;
+            //                else $('#result').append('<tr><td>' + results[i].water.value + '</td></tr>');
+
+
+
+            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].plant.value + '</td></tr>');
+            //            if (results[i].water.value)
+            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].latin.value + '</td></tr>');
+            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].water.value + '</td></tr>');
+            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].special.value + '</td></tr>');
+            //            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].price.value + '</td></tr>');
+            //            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].light.value + '</td></tr>');
+            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].colour.value + '</td></tr>');
 
             //console.log(data);
             $scope.resultQ1 = data;
@@ -194,49 +210,106 @@ function mainCtrl($scope, $http) {
             //            this.push(key +  ' ', value)
             //        })
             angular.forEach(data.results.bindings, function (val) {
+                console.log(val)
                 //            $scope.myDynamicLabels.push(val.c.value);
                 //            $scope.myDynamicData.push(val.c.value);
-                //        $('#result').append('<tr><td>' + results[val].plant.value + '</td><td>' + results[val].plant.value + '</td></tr>')
+                //                if (val.water.value === undefined) $('#result').append('<tr><td>' + 'undefined' + '</td><td>' + 'undefined' + '</td></tr>');
+                //                else $('#result').append('<tr><td>' + val.water.value + '</td><td>' + val.water.value + '</td></tr>');
+                //                        $('#result').append('<tr><td>' + val.plant.value + '</td><td>' + val.plant.value + '</td></tr>')
 
             })
         })
         .error(function (error) {
             console.log('Error');
         });
+};
 
 
 
-    $scope.myDynamicLabels1 = [];
-    $scope.myDynamicData1 = [];
-
-    // TODO : type here code for your Ex 2
-    $scope.doMyAction = function () {
-        console.log('test');
-        $scope.result = "Here is my input: " + $scope.myInput + "!";
-
-        $scope.dynamicQuery = "Select ?s where { ?s a <http://data.vu.nl/coda/ontology/class#" + $scope.myInput + "> } limit 5";
-        //$scope.dynamicQuery = $scope.myInput;
-        console.log($scope.mysparqlendpoint + encodeURI($scope.myInput).replace(/#/g, '%23'));
-        $http({
-                method: "GET",
-                headers: {
-                    'Accept': 'application/sparql-results+json',
-                    'Content-Type': 'application/sparql-results+json'
-                },
-                url: $scope.mysparqlendpoint + encodeURI($scope.myInput).replace(/#/g, '%23'),
-
-            })
-            .success(function (data, status) {
-
-                console.log(data);
-                $scope.resultQ2 = data;
-            })
-            .error(function (error) {
-                console.log('Error');
-            });
-
-
-
-    };
-
-}
+//    $http({
+//            method: "GET",
+//            headers: {
+//                'Accept': 'application/sparql-results+json',
+//                'Content-Type': 'application/sparql-results+json'
+//            },
+//            url: $scope.mysparqlendpoint + encodeURI($scope.plantquery3).replace(/#/g, '%23'),
+//
+//        })
+//        .success(function (data, status) {
+//
+//            var results = data.results.bindings;
+//
+//            $("#result").empty();
+//
+//            console.log(results);
+//            console.log(results[0].plant.value);
+//                
+//            for (var i = 0; i < results.length; i++) if (results[i].water.value === undefined) i++;
+//        else $('#result').append('<tr><td>' + results[i].water.value + '</td></tr>');
+//        
+//        
+//            
+////            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].plant.value + '</td></tr>');
+////            if (results[i].water.value)
+////            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].latin.value + '</td></tr>');
+////            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].water.value + '</td></tr>');
+////            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].special.value + '</td></tr>');
+////            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].price.value + '</td></tr>');
+////            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].light.value + '</td></tr>');
+////            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].colour.value + '</td></tr>');
+//
+//            //console.log(data);
+//            $scope.resultQ1 = data;
+//            //        angular.foreach(data, function(value, key){
+//            //            this.push(key +  ' ', value)
+//            //        })
+//            angular.forEach(data.results.bindings, function (val) {
+//                console.log(val)
+//                //            $scope.myDynamicLabels.push(val.c.value);
+//                //            $scope.myDynamicData.push(val.c.value);
+////                if (val.water.value === undefined) $('#result').append('<tr><td>' + 'undefined' + '</td><td>' + 'undefined' + '</td></tr>');
+////                else $('#result').append('<tr><td>' + val.water.value + '</td><td>' + val.water.value + '</td></tr>');
+////                        $('#result').append('<tr><td>' + val.plant.value + '</td><td>' + val.plant.value + '</td></tr>')
+//
+//            })
+//        })
+//        .error(function (error) {
+//            console.log('Error');
+//        });
+//
+//
+//
+//    $scope.myDynamicLabels1 = [];
+//    $scope.myDynamicData1 = [];
+//
+//    // TODO : type here code for your Ex 2
+//    $scope.doMyAction = function () {
+//        console.log('test');
+//        $scope.result = "Here is my input: " + $scope.myInput + "!";
+//
+//        $scope.dynamicQuery = "Select ?s where { ?s a <http://data.vu.nl/coda/ontology/class#" + $scope.myInput + "> } limit 5";
+//        //$scope.dynamicQuery = $scope.myInput;
+//        console.log($scope.mysparqlendpoint + encodeURI($scope.myInput).replace(/#/g, '%23'));
+//        $http({
+//                method: "GET",
+//                headers: {
+//                    'Accept': 'application/sparql-results+json',
+//                    'Content-Type': 'application/sparql-results+json'
+//                },
+//                url: $scope.mysparqlendpoint + encodeURI($scope.myInput).replace(/#/g, '%23'),
+//
+//            })
+//            .success(function (data, status) {
+//
+//                console.log(data);
+//                $scope.resultQ2 = data;
+//            })
+//            .error(function (error) {
+//                console.log('Error');
+//            });
+//
+//
+//
+//    };
+//
+//}
