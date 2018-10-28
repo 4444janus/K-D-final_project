@@ -108,22 +108,12 @@ angular.module('KRRclass', ['chart.js']).controller('MainCtrl', ['$scope', '$htt
 
 function mainCtrl($scope, $http) {
 
-    // TODO : type here code for your Ex 1
-    $scope.myAppName = "Awesomename";
-    $scope.myAppList = ["codaonto:Study", "codaonto:Treatment", "codaonto:Variable"];
+
     $scope.mysparqlendpoint = "http://localhost:5820/plant/query?query="
     $scope.dbpedia = "http://dbpedia.org/sparql?query="
 
 
 
-    // TODO : type here code for your Ex 2
-    $scope.myInstances = [91, 81, 88, 77];
-    $scope.myClasses = ["Super Mario 64", "Mario kart Wii", "Doom", "Mirror's edge"];
-
-    $scope.myDynamicLabels = [];
-    $scope.myDynamicData = [];
-
-    //$scope.sparqlquery2 = "SELECT ?class (COUNT(?s) AS ?c) WHERE { ?s a ?class } GROUP BY ?class"
     $scope.plantquery = "SELECT ?plant WHERE {  ?plant ?a ?lant .} LIMIT 20"
     $scope.plantquery2 = "SELECT ?plant  WHERE {  ?lant ?a ?plant .  FILTER (?plant) } LIMIT 20"
     $scope.plantquery3 = "PREFIX pl: <http://www.semanticweb.org/ruud/BetterPlants/> SELECT * WHERE { {?plant pl:has_latin_name ?latin .} UNION {?plant pl:has_water_requirement ?water .} UNION {?plant pl:has_special_feature ?special .} UNION {?plant pl:has_price_range ?price .} UNION {?plant pl:has_light_requirement ?light .} UNION {?plant pl:has_leaf_colour ?colour .}} LIMIT 20"
@@ -139,28 +129,9 @@ function mainCtrl($scope, $http) {
     LIMIT 200"
 
     $scope.querydbpedia = "PREFIX umbelrc: <http://umbel.org/umbel/rc/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT * WHERE {  ?plant a dbo:Plant .  ?plant a yago:Plant100017222 .  ?plant a umbelrc:Plant .  OPTIONAL{?plant dbo:thumbnail ?thumbnail} OPTIONAL{?plant dbo:abstract ?abstact . FILTER langMatches(lang(?abstact),'en')} OPTIONAL{?plant dbp:binomial ?binomial} OPTIONAL{?plant dbo:family ?family} OPTIONAL{?plant foaf:isPrimaryTopicOf ?wikiLink} } ORDER BY ?plant LIMIT 20"
-    //url : $scope.mysparqlendpoint+encodeURI("Select ?s where { ?s a <http://data.vu.nl/coda/ontology/class#"+$scope.myarg+"> } limit 5").replace(/#/g, '%23'),
-    //url : $scope.mysparqlendpoint+encodeURI("SELECT ?class (COUNT(?s) AS ?c) WHERE { ?s a ?class } GROUP BY ?class").replace(/#/g, '%23'),
-    //encodeURI("SELECT ?class (COUNT(?s) AS ?c) WHERE { ?s a ?class } GROUP BY ?class").replace(/#/g, '%23'),
-    //console.log($scope.mysparqlendpoint+encodeURI($scope.sparqlquery2).replace(/#/g, '%23'));
+
     console.log($scope.mysparqlendpoint + encodeURI($scope.plantquery).replace(/#/g, '%23'));
 
-    //test
-    //    var query = "SELECT ?plant \
-    //WHERE { \
-    //  ?plant ?a ?lant . \
-    //  FILTER (?lant) \
-    //} LIMIT 20";
-    //
-    //    $.post("http://localhost:5820/plant/query?query=", data = {
-    //        'query': query
-    //    }, function (data) {
-    //        var result = data.results.bindings;
-    //
-    //        console.log(data)
-    //        console.log(result)
-    //
-    //    });
 
     $http({
             method: "GET",
@@ -190,36 +161,9 @@ function mainCtrl($scope, $http) {
             //                for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].wikiLink.value + '</td></tr>');
 
 
-
-            //            console.log(results[0].plant.value);
-            //
-            //            for (var i = 0; i < results.length; i++)
-            //                if (results[i].water.value === undefined) i++;
-            //                else $('#result').append('<tr><td>' + results[i].water.value + '</td></tr>');
-
-
-
-            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].plant.value + '</td></tr>');
-            //            if (results[i].water.value)
-            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].latin.value + '</td></tr>');
-            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].water.value + '</td></tr>');
-            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].special.value + '</td></tr>');
-            //            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].price.value + '</td></tr>');
-            //            //for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].light.value + '</td></tr>');
-            //            for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].colour.value + '</td></tr>');
-
-            //console.log(data);
-            $scope.resultQ1 = data;
-            //        angular.foreach(data, function(value, key){
-            //            this.push(key +  ' ', value)
-            //        })
             angular.forEach(data.results.bindings, function (val) {
                 //console.log(val)
-                //            $scope.myDynamicLabels.push(val.c.value);
-                //            $scope.myDynamicData.push(val.c.value);
-                //                if (val.water.value === undefined) $('#result').append('<tr><td>' + 'undefined' + '</td><td>' + 'undefined' + '</td></tr>');
-                //                else $('#result').append('<tr><td>' + val.water.value + '</td><td>' + val.water.value + '</td></tr>');
-                //                        $('#result').append('<tr><td>' + val.plant.value + '</td><td>' + val.plant.value + '</td></tr>')
+
 
             })
         })
@@ -233,20 +177,12 @@ function mainCtrl($scope, $http) {
         var water = [];
         var soil = [];
         var colour = [];
-        //sort plant
-        //        if ($('#inside').prop('checked')) sort_plant = "inside";
-        //        if ($('#outside').prop('checked')) sort_plant = "outside";
-        //
-        //
-        //        //light
-        //        if ($('#lowL').prop('checked')) light.push("low light");
-        //        if ($('#mediumL').prop('checked')) light.push("medium light");
-        //        if ($('#highL').prop('checked')) light.push("high light");
+
 
         //water
         if ($('#lowW').prop('checked')) water.push("Low");
-        if ($('#moderateW').prop('checked')) water.push("None");
-        if ($('#noneW').prop('checked')) water.push("Moderate");
+        if ($('#moderateW').prop('checked')) water.push("Moderate");
+        if ($('#noneW').prop('checked')) water.push("None");
 
         //light
         if ($('#sun').prop('checked')) light.push("sun");
@@ -261,17 +197,17 @@ function mainCtrl($scope, $http) {
         if ($('#sand').prop('checked')) soil.push("sand");
         
         //colour
-        if ($('#clay').prop('checked')) colour.push("clay");
-        if ($('#loam').prop('checked')) colour.push("loam");
-        if ($('#many').prop('checked')) colour.push("many");
-        if ($('#rock').prop('checked')) colour.push("rock");
-        if ($('#sand').prop('checked')) colour.push("sand");
-        if ($('#clay').prop('checked')) colour.push("clay");
-        if ($('#loam').prop('checked')) colour.push("loam");
-        if ($('#many').prop('checked')) colour.push("many");
-        if ($('#rock').prop('checked')) colour.push("rock");
-        if ($('#sand').prop('checked')) colour.push("sand");
-        if ($('#clay').prop('checked')) colour.push("clay");
+        if ($('#blue').prop('checked')) colour.push("blue");
+        if ($('#brown').prop('checked')) colour.push("brown");
+        if ($('#burgundy').prop('checked')) colour.push("burgundy");
+        if ($('#gray').prop('checked')) colour.push("gray");
+        if ($('#Green').prop('checked')) colour.push("Green");
+        if ($('#indigo').prop('checked')) colour.push("indigo");
+        if ($('#lavender').prop('checked')) colour.push("lavender");
+        if ($('#magenta').prop('checked')) colour.push("magenta");
+        if ($('#orange').prop('checked')) colour.push("orange");
+        if ($('#pink').prop('checked')) colour.push("pink");
+        if ($('#purple').prop('checked')) colour.push("purple");
         if ($('#red').prop('checked')) colour.push("red");
         if ($('#silver').prop('checked')) colour.push("silver");
         if ($('#white').prop('checked')) colour.push("white");
@@ -285,9 +221,7 @@ function mainCtrl($scope, $http) {
         var colourquery = "";
 
         console.log(water)
-        //        console.log(light)
-        //        console.log(price)
-        //        console.log(sort_plant)
+
 
         if (water.length == 0) {
             window.alert("please select water requirement")
@@ -336,6 +270,57 @@ function mainCtrl($scope, $http) {
             } else {
                 soilquery += soil[0] + "|| ?soil_requirement =pl:" + soil[1] + "|| ?soil_requirement =pl:" + soil[2] + "|| ?soil_requirement =pl:" + soil[3] + "|| ?soil_requirement =pl:" + soil[4];
             };
+            
+            if (colour.length == 0) {
+                window.alert("please select a colour, veranderen naar alle kleuren in query")
+           } else if ( colour.length == 1) {
+               colourquery += colour[0];
+               console.log(colourquery)
+           } else if ( colour.length == 2) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1];
+               console.log(colourquery)
+           } else if ( colour.length == 3) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2];
+               console.log(colourquery)
+           } else if ( colour.length == 4) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3];
+               console.log(colourquery)
+           } else if ( colour.length == 5) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4];
+               console.log(colourquery)
+           } else if ( colour.length == 6) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5];
+               console.log(colourquery)               
+           } else if ( colour.length == 7) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6];
+               console.log(colourquery)                  
+           } else if ( colour.length == 8) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6] + "|| ?flower_colour =pl:" + colour[7];                 
+               console.log(colourquery)   
+           } else if ( colour.length == 9) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6] + "|| ?flower_colour =pl:" + colour[7] + "|| ?flower_colour =pl:" + colour[8];                 console.log(colourquery)   
+           } else if ( colour.length == 10) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6] + "|| ?flower_colour =pl:" + colour[7] + "|| ?flower_colour =pl:" + colour[8] + "|| ?flower_colour =pl:" + colour[9];         
+               console.log(colourquery)   
+           } else if ( colour.length == 11) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6] + "|| ?flower_colour =pl:" + colour[7] + "|| ?flower_colour =pl:" + colour[8] + "|| ?flower_colour =pl:" + colour[9] + "|| ?flower_colour =pl:" + colour[10];           
+               console.log(colourquery)                  
+           } else if ( colour.length == 12) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6] + "|| ?flower_colour =pl:" + colour[7] + "|| ?flower_colour =pl:" + colour[8] + "|| ?flower_colour =pl:" + colour[9] + "|| ?flower_colour =pl:" + colour[10] + "|| ?flower_colour =pl:" + colour[11];
+               console.log(colourquery)                  
+           } else if ( colour.length == 13) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6] + "|| ?flower_colour =pl:" + colour[7] + "|| ?flower_colour =pl:" + colour[8] + "|| ?flower_colour =pl:" + colour[9] + "|| ?flower_colour =pl:" + colour[10] + "|| ?flower_colour =pl:" + colour[11] + "|| ?flower_colour =pl:" + colour[12];
+               console.log(colourquery)                  
+           } else if ( colour.length == 14) {
+               colourquery += colour[0] + "|| ?flower_colour =pl:" + colour[1] + "|| ?flower_colour =pl:" + colour[2] + "|| ?flower_colour =pl:" + colour[3] + "|| ?flower_colour =pl:" + colour[4] + "|| ?flower_colour =pl:" + colour[5] + "|| ?flower_colour =pl:" + colour[6] + "|| ?flower_colour =pl:" + colour[7] + "|| ?flower_colour =pl:" + colour[8] + "|| ?flower_colour =pl:" + colour[9] + "|| ?flower_colour =pl:" + colour[10] + "|| ?flower_colour =pl:" + colour[11] + "|| ?flower_colour =pl:" + colour[12] + "|| ?flower_colour =pl:" + colour[1];
+               console.log(colourquery)                 
+           }
+                //else {
+//                for (var i = 0; i > colour.length; i++) {
+//                    colourquery += colour[i] + "|| ?flower_colour =pl:" + colour[i];
+//                console.log(colourquery)
+//                }
+//            }
 
 
             $scope.eigenontologyquery = "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX pl: <http://www.semanticweb.org/ruud/BetterPlants/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT * WHERE { ?plant pl:has_latin_name ?latin_name . OPTIONAL{?plant pl:has_water_requirement ?water} OPTIONAL{?plant pl:has_special_feature ?special} OPTIONAL{?plant pl:has_light_requirement ?light} OPTIONAL{?plant pl:has_leaf_colour ?leaf_colour} OPTIONAL{?plant pl:has_appropriate_location ?location} OPTIONAL{?plant pl:additional_information ?information} OPTIONAL{?plant pl:has_size_at_maturity ?size} OPTIONAL{?plant pl:attracts_wildlife ?wildlife} OPTIONAL{?plant pl:has_bloom_time ?bloom_time} OPTIONAL{?plant pl:has_flower_colour ?flower_colour} OPTIONAL{?plant pl:has_soil_requirement ?soil_requirement} OPTIONAL{?plant pl:is_plant_type ?plant_type} OPTIONAL{?plant pl:has_common_name ?common_name} \
@@ -366,7 +351,9 @@ function mainCtrl($scope, $http) {
 
                     console.log(results);
                     console.log(results[0].plant.value);
-
+                    
+                    $('#result').append('<tr><th> Name </th><th> Light</th><th> Water </th><th> Location </th><th> Colour </th><th>Soil</th></tr>')
+                
                     for (var i = 0; i < results.length; i++) $('#result').append('<tr><td>' + results[i].plant.value + '</td><td>' + results[i].light.value + '</td><td>' + results[i].water.value + '</td><td>' + results[i].location.value + '</td><td>' + results[i].flower_colour.value + '</td><td>' + results[i].soil_requirement.value + '</td></tr>');
 
                     //            for (var i = 0; i < results.length; i++)

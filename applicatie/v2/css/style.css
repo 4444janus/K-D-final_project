@@ -1077,12 +1077,43 @@ h4 {
     background: #FFFFFF;
 }
 
-table td {
+/*
+table td{
     table-layout: fixed;
-    width: 20px;
-    height: 20px;
+    width: 10%;
+    height: 80%;
 
 
     overflow: hidden;
     word-wrap: break-word;
 }
+*/
+
+#result{
+    width: 700px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#result tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 800px;
+}
+
+#result thead tr {
+   display: block;
+}
+
+#result thead {
+  background: black;
+  color:#fff;
+}
+
+#result th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 800px;
+}
+
