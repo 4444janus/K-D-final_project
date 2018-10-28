@@ -22,6 +22,22 @@
                                                                    <http://www.semanticweb.org/ruud/yagoOntology> .
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://dbpedia.org/ontology/family
+dbo:family owl:equivalentProperty pl:is_of_family .
+
+
+###  http://dbpedia.org/ontology/thumbnail
+dbo:thumbnail owl:equivalentProperty pl:has_image .
+
+
+###  http://www.semanticweb.org/ruud/BetterPlants/has_image
+
+###  http://www.semanticweb.org/ruud/BetterPlants/is_of_family
+
+#################################################################
 #    Data properties
 #################################################################
 
